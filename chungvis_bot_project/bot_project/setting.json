@@ -1,0 +1,12 @@
+{
+  "uri": {
+    "clien": "http://m.clien.net/cs3/board?bo_table=park",
+    "page_spt": "&spt=-5650305"
+  },
+  "db": {
+    "name": "test.db"
+  },
+  "token": {
+    "du_test_bot": "305321080:AAHQTqiX6ok4kR2HEMdlejOJ_Cp5NZqpYUA"
+  }
+}
