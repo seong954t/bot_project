@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="baaea518-9982-4be1-8ae6-75209abc6646" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1485149290601" expanded="true" signature="1099:1222" ph="INSERT INTO info_db... " />
+                <marker date="1485149290601" expanded="true" signature="2761:2873" ph="INSERT INTO subscribe_board... " />
+                <marker date="1485149290601" expanded="true" signature="2892:3007" ph="INSERT INTO subscribe_board... " />
+                <marker date="1485149290601" expanded="true" signature="3026:3269" ph="INSERT INTO subscribe_board... " />
+                <marker date="1485149290601" expanded="true" signature="3288:3401" ph="INSERT INTO subscribe_board... " />
+                <marker date="1485149290601" expanded="true" signature="4303:4355" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="4481:4536" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="4664:4716" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="4845:4898" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="5027:5080" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="5669:5706" ph="SELECT user_... subscribe_board" />
+                <marker date="1485149290601" expanded="true" signature="5939:5998" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="6517:6579" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="7439:7499" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="7850:7910" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="8838:8875" ph="SELECT user_... subscribe_board" />
+                <marker date="1485149290601" expanded="true" signature="10467:10519" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="10645:10700" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="10828:10880" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="11009:11062" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="11191:11244" ph="UPDATE subsc... " />
+                <marker date="1485149290601" expanded="true" signature="15802:15882" ph="SELECT id,ti... cnu_news" />
+                <marker date="1485149290601" expanded="true" signature="16589:16671" ph="SELECT id,ti... cnu_h_info" />
+                <marker date="1485149290601" expanded="true" signature="17375:17449" ph="SELECT id,ti... cnu_job" />
+                <marker date="1485149290601" expanded="true" signature="18156:18233" ph="SELECT id,ti... cnu_e_info" />
+                <marker date="1485149290601" expanded="true" signature="19055:19114" ph="SELECT id,ti... e_ref" />
+                <marker date="1485149290601" expanded="true" signature="19857:19917" ph="SELECT id,ti... e_info" />
+                <marker date="1485149290601" expanded="true" signature="20657:20729" ph="SELECT id,ti... e_hw" />
+                <marker date="1485149290601" expanded="true" signature="21553:21622" ph="SELECT id,ti... cse_info" />
+                <marker date="1485149290601" expanded="true" signature="22418:22489" ph="SELECT id,ti... cse_g_info" />
+                <marker date="1485149290601" expanded="true" signature="23287:23358" ph="SELECT id,ti... cse_s_info" />
+                <marker date="1485149290601" expanded="true" signature="24169:24233" ph="SELECT id,me... menu_2" />
+                <marker date="1485149290601" expanded="true" signature="24991:25049" ph="SELECT id,me... menu_3" />
+                <marker date="1485149290601" expanded="true" signature="25829:25903" ph="SELECT id,ti... dorm_info" />
+                <marker date="1485149290601" expanded="true" signature="26692:26753" ph="SELECT id,me... dorm_menu" />
+                <marker date="1485149290601" expanded="true" signature="27660:27694" ph="SELECT subsc... subscribe" />
+                <marker date="1485149290601" expanded="true" signature="27832:27913" ph="SELECT id,ti... cnu_h_info" />
+                <marker date="1485149290601" expanded="true" signature="28189:28237" ph="UPDATE info_... " />
+                <marker date="1485149290601" expanded="true" signature="28748:28782" ph="SELECT subsc... subscribe" />
+                <marker date="1485149290601" expanded="true" signature="28991:29068" ph="SELECT id,ti... cnu_h_info" />
+                <marker date="1485149290601" expanded="true" signature="29887:29921" ph="SELECT subsc... subscribe" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="settings.editor.splitter.proportion" value="0.2559475" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="bot_project" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="bot_project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="baaea518-9982-4be1-8ae6-75209abc6646" name="Default" comment="" />
+      <created>1496745880229</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1496745880229</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1913646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cse_recruit_bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2395">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../chung_VIS_bot_make/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1485149290601" expanded="true" signature="1099:1222" ph="INSERT INTO info_db... " />
+            <marker date="1485149290601" expanded="true" signature="2761:2873" ph="INSERT INTO subscribe_board... " />
+            <marker date="1485149290601" expanded="true" signature="2892:3007" ph="INSERT INTO subscribe_board... " />
+            <marker date="1485149290601" expanded="true" signature="3026:3269" ph="INSERT INTO subscribe_board... " />
+            <marker date="1485149290601" expanded="true" signature="3288:3401" ph="INSERT INTO subscribe_board... " />
+            <marker date="1485149290601" expanded="true" signature="4303:4355" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="4481:4536" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="4664:4716" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="4845:4898" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="5027:5080" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="5669:5706" ph="SELECT user_... subscribe_board" />
+            <marker date="1485149290601" expanded="true" signature="5939:5998" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="6517:6579" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="7439:7499" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="7850:7910" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="8838:8875" ph="SELECT user_... subscribe_board" />
+            <marker date="1485149290601" expanded="true" signature="10467:10519" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="10645:10700" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="10828:10880" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="11009:11062" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="11191:11244" ph="UPDATE subsc... " />
+            <marker date="1485149290601" expanded="true" signature="15802:15882" ph="SELECT id,ti... cnu_news" />
+            <marker date="1485149290601" expanded="true" signature="16589:16671" ph="SELECT id,ti... cnu_h_info" />
+            <marker date="1485149290601" expanded="true" signature="17375:17449" ph="SELECT id,ti... cnu_job" />
+            <marker date="1485149290601" expanded="true" signature="18156:18233" ph="SELECT id,ti... cnu_e_info" />
+            <marker date="1485149290601" expanded="true" signature="19055:19114" ph="SELECT id,ti... e_ref" />
+            <marker date="1485149290601" expanded="true" signature="19857:19917" ph="SELECT id,ti... e_info" />
+            <marker date="1485149290601" expanded="true" signature="20657:20729" ph="SELECT id,ti... e_hw" />
+            <marker date="1485149290601" expanded="true" signature="21553:21622" ph="SELECT id,ti... cse_info" />
+            <marker date="1485149290601" expanded="true" signature="22418:22489" ph="SELECT id,ti... cse_g_info" />
+            <marker date="1485149290601" expanded="true" signature="23287:23358" ph="SELECT id,ti... cse_s_info" />
+            <marker date="1485149290601" expanded="true" signature="24169:24233" ph="SELECT id,me... menu_2" />
+            <marker date="1485149290601" expanded="true" signature="24991:25049" ph="SELECT id,me... menu_3" />
+            <marker date="1485149290601" expanded="true" signature="25829:25903" ph="SELECT id,ti... dorm_info" />
+            <marker date="1485149290601" expanded="true" signature="26692:26753" ph="SELECT id,me... dorm_menu" />
+            <marker date="1485149290601" expanded="true" signature="27660:27694" ph="SELECT subsc... subscribe" />
+            <marker date="1485149290601" expanded="true" signature="27832:27913" ph="SELECT id,ti... cnu_h_info" />
+            <marker date="1485149290601" expanded="true" signature="28189:28237" ph="UPDATE info_... " />
+            <marker date="1485149290601" expanded="true" signature="28748:28782" ph="SELECT subsc... subscribe" />
+            <marker date="1485149290601" expanded="true" signature="28991:29068" ph="SELECT id,ti... cnu_h_info" />
+            <marker date="1485149290601" expanded="true" signature="29887:29921" ph="SELECT subsc... subscribe" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
