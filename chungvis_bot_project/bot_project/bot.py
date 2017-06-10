@@ -434,70 +434,13 @@ def handle(msg):
     else:
         if text in CNU:
             if text == CNU_news:
-                try:
-                    cursor.execute("SELECT id,title,link,writer,publish_date FROM cnu_news ORDER BY id desc LIMIT 10")
-                    receive_list = []
-                    res = ''
-                    for id, title, link, writer, publish_date in cursor:
-                        receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
-                            id, title, link, writer, publish_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    help(chat_id)
-                    return
+                run_CNU("cnu_news")
             elif text == CNU_h_info:
-                try:
-                    cursor.execute("SELECT id,title,link,writer,publish_date FROM cnu_h_info ORDER BY id desc LIMIT 10")
-                    receive_list = []
-                    res = ''
-                    for id, title, link, writer, publish_date in cursor:
-                        receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
-                            id, title, link, writer, publish_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    help(chat_id)
-                    return
+                run_CNU("cnu_h_info")
             elif text == CNU_job:
-                try:
-                    cursor.execute("SELECT id,title,link,writer,publish_date FROM cnu_job ORDER BY id LIMIT 10")
-                    receive_list = []
-                    res = ''
-                    for id, title, link, writer, publish_date in cursor:
-                        receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
-                            id, title, link, writer, publish_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    help(chat_id)
-                    return
+                run_CNU("cnu_job")
             elif text == CNU_e_info:
-                try:
-                    cursor.execute("SELECT id,title,link,writer,publish_date FROM cnu_e_info ORDER BY id LIMIT 10")
-                    receive_list = []
-                    res = ''
-                    for id, title, link, writer, publish_date in cursor:
-                        receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
-                            id, title, link, writer, publish_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    time.sleep(3)
-                    help(chat_id)
-                    return
+                run_CNU("cnu_e_info")
         elif text in E:
             if text == E_ref:
                 try:
@@ -686,6 +629,24 @@ def handle(msg):
             cnx.commit()
             cnx.close()
             help(chat_id)
+
+    # CNU_news, CNU_h_info, CNU_job, CNU_e_info
+    def run_CNU(run_data):
+        try:
+            cursor.execute("SELECT id,title,link,writer,publish_date FROM ", run_data, " ORDER BY id desc LIMIT 10")
+            receive_list = []
+            res = ''
+            for id, title, link, writer, publish_date in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
+                    id, title, link, writer, publish_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            help(chat_id)
+            return
 
 
 def new_message():
