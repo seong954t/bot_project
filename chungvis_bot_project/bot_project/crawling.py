@@ -20,7 +20,7 @@ def inputData(list):
 # 학사정보 크롤링
 URI = "http://plus.cnu.ac.kr/_prog/_board/?code=sub07_0702&site_dvs_cd=kr&menu_dvs_cd=0702"
 CONCAT_URI = "http://plus.cnu.ac.kr/_prog/_board"
-#
+
 r = requests.get(URI)
 r.encoding = "utf-8"
 soup = BeautifulSoup(r.text, "html.parser")
@@ -38,10 +38,7 @@ for tr in tr_list:
     original_uri = CONCAT_URI + c_href[1:]
     c_center = tr.find('td', {'class': 'center'}).get_text()
     c_date = tr.find('td', {'class': 'date'}).get_text()
-    # print("제목: " + c_title)
-    # print("url: " + original_uri)  # href는 앞에 .붙어서 .빼줘야함
-    # print("작성자: " + c_center)
-    # print("날짜: " + c_date)
+
     query_data = (
         c_title, original_uri, c_center, c_date
     )
