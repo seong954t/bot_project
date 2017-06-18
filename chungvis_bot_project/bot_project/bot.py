@@ -443,23 +443,9 @@ def handle(msg):
                 run_CNU("cnu_e_info")
         elif text in E:
             if text == E_ref:
-                try:
-                    send_message(chat_id, ''' 이러닝 홈페이지 자료실 ''')
-                    cursor.execute("SELECT id,title,r_date FROM e_ref ORDER BY id desc LIMIT 10")
-                    receive_list = []
-                    res = ''
-                    for id, title, r_date in cursor:
-                        receive_list.append(u"글번호 : %s \n제목 : %s \n게시일자 : %s \n\n" % (
-                            id, title, r_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    time.sleep(3)
-                    help(chat_id)
-                    return
+                send_message(chat_id, ''' 이러닝 홈페이지 자료실 ''')
+                run_E("e_ref")
+
             elif text == E_info:
                 try:
                     send_message(chat_id, ''' 이러닝 홈페이지 공지사항 ''')
@@ -645,6 +631,25 @@ def handle(msg):
         finally:
             cnx.commit()
             cnx.close()
+            help(chat_id)
+            return
+
+    # E_ref
+    def run_E(run_data):
+        try:
+            cursor.execute("SELECT id,title,r_date FROM ", run_data," ORDER BY id desc LIMIT 10")
+            receive_list = []
+            res = ''
+            for id, title, r_date in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n게시일자 : %s \n\n" % (
+                    id, title, r_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
             help(chat_id)
             return
 
