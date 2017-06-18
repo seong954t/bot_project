@@ -498,23 +498,7 @@ def handle(msg):
                     return
         elif text in CSE:
             if text == CSE_info:
-                try:
-                    send_message(chat_id, ''' 충남대 컴퓨터공학과 공지사항 ''')
-                    cursor.execute("SELECT id,title,link,writer,c_date FROM cse_info ORDER BY id LIMIT 10")
-                    receive_list = []
-                    res = ''
-                    for id, title, link, writer, c_date in cursor:
-                        receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
-                            id, title, link, writer, c_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    time.sleep(3)
-                    help(chat_id)
-                    return
+                return 
             elif text == CSE_g_info:
                 try:
                     send_message(chat_id, ''' 충남대 컴퓨터공학과 일반소식 ''')
