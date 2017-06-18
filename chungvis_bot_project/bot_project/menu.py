@@ -9,8 +9,6 @@ MENU = "http://cnuis.cnu.ac.kr/jsp/etc/weekMenuFrame.jsp"
 MENU_2 = []
 MENU_3 = []
 def inputData(list,list2):
-    # DEFAULT SETTING : host='127.0.0.1', port='3306',charset='utf8'
-    #cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
     cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
@@ -27,6 +25,7 @@ def main():
     inputData(MENU_2, MENU_3)
 
 def get_CNU(URL):
+    # PhantomJS 경로 설정
     browser = webdriver.PhantomJS("C:\\Users\\eunjeong\\Desktop\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe")
     browser.get(URL)
     browser.switch_to_frame('bottom')
