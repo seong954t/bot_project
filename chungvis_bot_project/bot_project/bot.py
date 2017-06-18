@@ -435,7 +435,22 @@ def handle(msg):
 
     # DORM_info
     def run_DORM_info():
-        return
+        try:
+            cursor.execute("SELECT id,title,link,writer,d_date FROM dorm_info ORDER BY id desc LIMIT 3")
+            receive_list = []
+            res = ''
+            for id, title, link, writer, d_date in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
+                    id, title, link, writer, d_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
+            help(chat_id)
+            return
 
     if content_type != 'text':
         send_message(chat_id, u'잘못된 입력입니다.')
