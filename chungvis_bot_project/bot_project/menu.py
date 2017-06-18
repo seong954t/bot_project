@@ -27,6 +27,7 @@ def main():
     inputData(MENU_2, MENU_3)
 
 def get_CNU(URL):
+    # PhantomJS 경로 설정
     browser = webdriver.PhantomJS("C:\\Users\\eunjeong\\Desktop\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe")
     browser.get(URL)
     browser.switch_to_frame('bottom')
