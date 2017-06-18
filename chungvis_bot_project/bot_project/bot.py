@@ -456,10 +456,13 @@ def handle(msg):
 
         elif text in CSE:
             if text == CSE_info:
+                send_message(chat_id, ''' 충남대 컴퓨터공학과 공지사항 ''')
                 return
             elif text == CSE_g_info:
+                send_message(chat_id, ''' 충남대 컴퓨터공학과 일반소식 ''')
                 return
             elif text == CSE_s_info:
+                send_message(chat_id, ''' 충남대 컴퓨터공학과 사업단 소식 ''')
                 return
         elif text in MENU:
             if text == MENU_2:
