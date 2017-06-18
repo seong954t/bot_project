@@ -395,6 +395,25 @@ def handle(msg):
             help(chat_id)
             return
 
+    # MENU_2
+    def run_MENU_2():
+        try:
+            cursor.execute("SELECT id,menu,price,m_date FROM menu_2 ORDER BY id desc LIMIT 3")
+            receive_list = []
+            res = ''
+            for id, menu, price, m_date in cursor:
+                receive_list.append(u"글번호 : %s \n메뉴 : %s \n가격 : %s \n날짜 : %s \n \n\n" % (
+                    id, menu, price, m_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
+            help(chat_id)
+            return
+
     if content_type != 'text':
         send_message(chat_id, u'잘못된 입력입니다.')
         return
@@ -540,23 +559,9 @@ def handle(msg):
                 return
         elif text in MENU:
             if text == MENU_2:
-                try:
-                    send_message(chat_id, ''' 이번주 2학 메뉴 ''')
-                    cursor.execute("SELECT id,menu,price,m_date FROM menu_2 ORDER BY id desc LIMIT 3")
-                    receive_list = []
-                    res = ''
-                    for id,menu,price,m_date in cursor:
-                        receive_list.append(u"글번호 : %s \n메뉴 : %s \n가격 : %s \n날짜 : %s \n \n\n" % (
-                            id, menu, price, m_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    time.sleep(3)
-                    help(chat_id)
-                    return
+                send_message(chat_id, ''' 이번주 2학 메뉴 ''')
+                run_MENU_2()
+
             elif text == MENU_3:
                 try:
                     send_message(chat_id, ''' 이번주 3학 메뉴''')
