@@ -1,5 +1,6 @@
 import time
-import mysql.connector  #   MYSQL 커넥터
+import pymysql
+import mysql
 import telepot          #   텔레그램 봇과 통신하기 위한 API
 import sys
 import re
@@ -32,7 +33,7 @@ DORM_info = DORM[1]
 def inputData(list):
     # DEFAULT SETTING : host='127.0.0.1', port='3306',charset='utf8'
     #cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = mysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO info_db (title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
@@ -85,7 +86,7 @@ def subscribe_help(id):
 
 #   구독된 정보가 없을 때
 def before_subscribe(id, text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     sql_msg = ["INSERT INTO subscribe_board (user_name, cnu) VALUES (%s, %s) ON DUPLICATE KEY UPDATE user_name=VALUES(user_name)",
@@ -121,7 +122,7 @@ def before_subscribe(id, text):
         help(id)
 
 def after_subscribe(id, text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     stmt = ''
@@ -153,7 +154,7 @@ def after_subscribe(id, text):
 
 #   게시판 구독 함수
 def subscribe_board(id,text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     insert_text = []
@@ -240,7 +241,7 @@ $DORM  : 충남대학교 학생생활관(기숙사) 정보
 
 
 def cancle_subscribe(id,text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     insert_text = []
@@ -287,7 +288,7 @@ def cancle_subscribe(id,text):
     help(id)
 
 def remove_subscribe_list(id, text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     stmt = ''
@@ -319,7 +320,7 @@ def remove_subscribe_list(id, text):
 
 def handle(msg):
     #cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',database='cnu_bachelor_info')
     cursor = cnx.cursor()
     content_type, chat_type, chat_id = telepot.glance(msg)
     if content_type != 'text':
@@ -598,7 +599,7 @@ def handle(msg):
 
 
 def new_message():
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
 
     subscribe_user_list = []
@@ -630,7 +631,7 @@ def search_keyword_help(id):
 
 
 def search_keyword(id):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
 
@@ -668,7 +669,7 @@ def search_keyword(id):
 
 
 def start():
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
 
     subscribe_user_list = []
@@ -685,8 +686,6 @@ def start():
 
     return
 
-
-#TOKEN = sys.argv[1]
 TOKEN = "320460822:AAEX3Iu6cxClu4wG0GXyrosTvkK-Cr_5XIk"
 print('received token :', TOKEN)
 
@@ -694,10 +693,7 @@ bot = telepot.Bot(TOKEN)
 start()
 bot.message_loop(handle)
 print('Listening...')
-# search_keyword_help(292404252)
-
 while 1:
     new_message()
     time.sleep(30)
-
 
