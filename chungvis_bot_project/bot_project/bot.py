@@ -382,7 +382,22 @@ def handle(msg):
 
     # CSE_info, CSE_g_info, CSE_s_info
     def run_CSE(run_data):
-        return
+        try:
+            cursor.execute("SELECT id,title,link,writer,c_date FROM ", run_data," ORDER BY id LIMIT 10")
+            receive_list = []
+            res = ''
+            for id, title, link, writer, c_date in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
+                    id, title, link, writer, c_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
+            help(chat_id)
+            return
 
     if content_type != 'text':
         send_message(chat_id, u'잘못된 입력입니다.')
