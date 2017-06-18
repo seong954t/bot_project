@@ -433,6 +433,43 @@ def handle(msg):
             help(chat_id)
             return
 
+    # DORM_info
+    def run_DORM_info():
+        try:
+            cursor.execute("SELECT id,title,link,writer,d_date FROM dorm_info ORDER BY id desc LIMIT 3")
+            receive_list = []
+            res = ''
+            for id, title, link, writer, d_date in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
+                    id, title, link, writer, d_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
+            help(chat_id)
+            return
+
+    def run_DORM_menu():
+        try:
+            cursor.execute("SELECT id,menu,d_date FROM dorm_menu ORDER BY id desc LIMIT 3")
+            receive_list = []
+            res = ''
+            for id, menu, d_date in cursor:
+                receive_list.append(u"글번호 : %s \n메뉴 : %s \n날짜 : %s \n \n\n" % (
+                    id, menu, d_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
+            help(chat_id)
+            return
+
     if content_type != 'text':
         send_message(chat_id, u'잘못된 입력입니다.')
         return
@@ -587,41 +624,13 @@ def handle(msg):
 
         elif text in DORM:
             if text == DORM_info:
-                try:
-                    send_message(chat_id, ''' 충남대 기숙사 공지사항 ''')
-                    cursor.execute("SELECT id,title,link,writer,d_date FROM dorm_info ORDER BY id desc LIMIT 3")
-                    receive_list = []
-                    res = ''
-                    for id,title,link,writer,d_date in cursor:
-                        receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
-                            id, title, link, writer, d_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    time.sleep(3)
-                    help(chat_id)
-                    return
+                send_message(chat_id, ''' 충남대 기숙사 공지사항 ''')
+                run_DORM_info()
+                return
             elif text == DORM_menu:
-                try:
-                    send_message(chat_id, ''' 충남대 기숙사 식사 메뉴 ''')
-                    cursor.execute("SELECT id,menu,d_date FROM dorm_menu ORDER BY id desc LIMIT 3")
-                    receive_list = []
-                    res = ''
-                    for id, menu, d_date in cursor:
-                        receive_list.append(u"글번호 : %s \n메뉴 : %s \n날짜 : %s \n \n\n" % (
-                            id, menu, d_date))
-                    for message in reversed(receive_list):
-                        res += message
-                    send_message(chat_id, res)
-                finally:
-                    cnx.commit()
-                    cnx.close()
-                    time.sleep(3)
-                    help(chat_id)
-                    return
+                send_message(chat_id, ''' 충남대 기숙사 식사 메뉴 ''')
+                run_DORM_menu()
+                return
         else:
             cnx.commit()
             cnx.close()
