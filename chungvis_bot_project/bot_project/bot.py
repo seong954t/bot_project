@@ -1,5 +1,6 @@
 import time
-import mysql.connector  #   MYSQL 커넥터
+import pymysql
+import mysql
 import telepot          #   텔레그램 봇과 통신하기 위한 API
 import sys
 import re
@@ -32,7 +33,7 @@ DORM_info = DORM[1]
 def inputData(list):
     # DEFAULT SETTING : host='127.0.0.1', port='3306',charset='utf8'
     #cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = mysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO info_db (title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
@@ -54,7 +55,6 @@ def send_message(id, msg):
 def help(id):
     send_message(id,
 u'''안녕? 난 충비서! 무엇을 도와줄까?
-
 명령어 사용법:
 /list  : 최근 등록게시물 10개 조회
 /sub   : 게시판 구독하기
@@ -72,7 +72,6 @@ u'''안녕? 난 충비서! 무엇을 도와줄까?
 def subscribe_help(id):
     send_message(id,
                  u''' 게시판 구독신청은 여기서 해요!
-
 명령어 사용법:
 &CNU   : 충남대학교 홈페이지 정보 구독
 &E     : 충남대학교 이러닝 홈페이지 구독
@@ -85,7 +84,7 @@ def subscribe_help(id):
 
 #   구독된 정보가 없을 때
 def before_subscribe(id, text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     sql_msg = ["INSERT INTO subscribe_board (user_name, cnu) VALUES (%s, %s) ON DUPLICATE KEY UPDATE user_name=VALUES(user_name)",
@@ -121,7 +120,7 @@ def before_subscribe(id, text):
         help(id)
 
 def after_subscribe(id, text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     stmt = ''
@@ -153,7 +152,7 @@ def after_subscribe(id, text):
 
 #   게시판 구독 함수
 def subscribe_board(id,text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     insert_text = []
@@ -226,7 +225,6 @@ def subscribe_board(id,text):
 def cancle_subscribe_help(id):
     send_message(id,
                  u''' 게시판 구독 취소 여기서 해요!
-
 명령어 사용법:
 초기목록: 처음으로 돌아가기
 $CNU   : 충남대학교 홈페이지 정보 구독
@@ -240,7 +238,7 @@ $DORM  : 충남대학교 학생생활관(기숙사) 정보
 
 
 def cancle_subscribe(id,text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     insert_text = []
@@ -287,7 +285,7 @@ def cancle_subscribe(id,text):
     help(id)
 
 def remove_subscribe_list(id, text):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
     stmt = ''
@@ -319,9 +317,85 @@ def remove_subscribe_list(id, text):
 
 def handle(msg):
     #cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',database='cnu_bachelor_info')
     cursor = cnx.cursor()
     content_type, chat_type, chat_id = telepot.glance(msg)
+
+    # CNU_news, CNU_h_info, CNU_job, CNU_e_info
+    def run_CNU(run_data):
+        try:
+            cursor.execute("SELECT id,title,link,writer,publish_date FROM ", run_data, " ORDER BY id desc LIMIT 10")
+            receive_list = []
+            res = ''
+            for id, title, link, writer, publish_date in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
+                    id, title, link, writer, publish_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            help(chat_id)
+            return
+
+    # E_ref, E_info
+    def run_E(run_data):
+        try:
+            cursor.execute("SELECT id,title,r_date FROM ", run_data, " ORDER BY id desc LIMIT 10")
+            receive_list = []
+            res = ''
+            for id, title, r_date in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n게시일자 : %s \n\n" % (
+                    id, title, r_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
+            help(chat_id)
+            return
+
+    # E_hw
+    def run_E_hw():
+        try:
+            cursor.execute("SELECT id,title,s_date,e_date,submit FROM e_hw ORDER BY id desc LIMIT 10")
+            receive_list = []
+            res = ''
+            for id, title, s_date, e_date, submit in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n시작일 : %s \n종료일 : %s \n제출여부 : %s \n \n\n" % (
+                    id, title, s_date, e_date, submit))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
+            help(chat_id)
+            return
+
+    # CSE_info, CSE_g_info, CSE_s_info
+    def run_CSE(run_data):
+        try:
+            cursor.execute("SELECT id,title,link,writer,c_date FROM ", run_data," ORDER BY id LIMIT 10")
+            receive_list = []
+            res = ''
+            for id, title, link, writer, c_date in cursor:
+                receive_list.append(u"글번호 : %s \n제목 : %s \n링크 : %s \n작성자 : %s\n작성일자 : %s\n\n" % (
+                    id, title, link, writer, c_date))
+            for message in reversed(receive_list):
+                res += message
+            send_message(chat_id, res)
+        finally:
+            cnx.commit()
+            cnx.close()
+            time.sleep(3)
+            help(chat_id)
+            return
+
     if content_type != 'text':
         send_message(chat_id, u'잘못된 입력입니다.')
         return
@@ -370,9 +444,7 @@ def handle(msg):
             try:
                 send_message(chat_id, u'''
                 안뇽^.^ 충남대학교 홈페이지의 정보를 가져오는 충비서야.
-
 명령어 안내
-
 학사정보 : 학사정보를 볼 수 있어
 새소식  : 새소식을 볼 수 있어
 교육정보 : 교육정보를 볼 수 있어
@@ -456,10 +528,16 @@ def handle(msg):
 
         elif text in CSE:
             if text == CSE_info:
+                send_message(chat_id, ''' 충남대 컴퓨터공학과 공지사항 ''')
+                run_CSE("cse_info")
                 return
             elif text == CSE_g_info:
+                send_message(chat_id, ''' 충남대 컴퓨터공학과 일반소식 ''')
+                run_CSE("cse_g_info")
                 return
             elif text == CSE_s_info:
+                send_message(chat_id, ''' 충남대 컴퓨터공학과 사업단 소식 ''')
+                run_CSE("cse_s_info")
                 return
         elif text in MENU:
             if text == MENU_2:
@@ -541,10 +619,8 @@ def handle(msg):
             help(chat_id)
 
 
-
-
 def new_message():
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
 
     subscribe_user_list = []
@@ -576,7 +652,7 @@ def search_keyword_help(id):
 
 
 def search_keyword(id):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306',
                                   database='cnu_bachelor_info')
     cursor = cnx.cursor()
 
@@ -614,7 +690,7 @@ def search_keyword(id):
 
 
 def start():
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
 
     subscribe_user_list = []
@@ -631,8 +707,6 @@ def start():
 
     return
 
-
-#TOKEN = sys.argv[1]
 TOKEN = "320460822:AAEX3Iu6cxClu4wG0GXyrosTvkK-Cr_5XIk"
 print('received token :', TOKEN)
 
@@ -640,10 +714,6 @@ bot = telepot.Bot(TOKEN)
 start()
 bot.message_loop(handle)
 print('Listening...')
-# search_keyword_help(292404252)
-
 while 1:
     new_message()
     time.sleep(30)
-
-
