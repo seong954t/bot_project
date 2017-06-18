@@ -587,8 +587,10 @@ def handle(msg):
 
         elif text in DORM:
             if text == DORM_info:
+                send_message(chat_id, ''' 충남대 기숙사 공지사항 ''')
                 return
             elif text == DORM_menu:
+                send_message(chat_id, ''' 충남대 기숙사 식사 메뉴 ''')
                 return
         else:
             cnx.commit()
