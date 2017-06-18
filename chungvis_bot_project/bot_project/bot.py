@@ -716,13 +716,20 @@ def start():
 
     return
 
-TOKEN = "320460822:AAEX3Iu6cxClu4wG0GXyrosTvkK-Cr_5XIk"
-print('received token :', TOKEN)
 
-bot = telepot.Bot(TOKEN)
-start()
-bot.message_loop(handle)
-print('Listening...')
-while 1:
-    new_message()
-    time.sleep(30)
+
+def main():
+    TOKEN = "320460822:AAEX3Iu6cxClu4wG0GXyrosTvkK-Cr_5XIk"
+    print('received token :', TOKEN)
+
+    bot = telepot.Bot(TOKEN)
+    start()
+    bot.message_loop(handle)
+    print('Listening...')
+    while 1:
+        new_message()
+        time.sleep(30)
+
+if __name__ == "__main__":
+    main()
+
