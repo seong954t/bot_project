@@ -457,15 +457,15 @@ def handle(msg):
         elif text in CSE:
             if text == CSE_info:
                 send_message(chat_id, ''' 충남대 컴퓨터공학과 공지사항 ''')
-                run_CSE()
+                run_CSE("cse_info")
                 return
             elif text == CSE_g_info:
                 send_message(chat_id, ''' 충남대 컴퓨터공학과 일반소식 ''')
-                run_CSE()
+                run_CSE("cse_g_info")
                 return
             elif text == CSE_s_info:
                 send_message(chat_id, ''' 충남대 컴퓨터공학과 사업단 소식 ''')
-                run_CSE()
+                run_CSE("cse_s_info")
                 return
         elif text in MENU:
             if text == MENU_2:
@@ -546,7 +546,7 @@ def handle(msg):
             cnx.close()
             help(chat_id)
 
-    # CNU_news, CNU_h_info, CNU_job, CNU_e_info
+# CNU_news, CNU_h_info, CNU_job, CNU_e_info
     def run_CNU(run_data):
         try:
             cursor.execute("SELECT id,title,link,writer,publish_date FROM ", run_data, " ORDER BY id desc LIMIT 10")
@@ -603,7 +603,7 @@ def handle(msg):
             return
 
 # CSE_info, CSE_g_info, CSE_s_info
-    def run_CSE():
+    def run_CSE(run_data):
         return
 
 
