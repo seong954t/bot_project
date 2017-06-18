@@ -2,26 +2,22 @@
 
 import requests
 from bs4 import BeautifulSoup
-import mysql.connector
+import pymysql
 
 def inputData(list,list2,list3,list4):
-    # DEFAULT SETTING : host='127.0.0.1', port='3306',charset='utf8'
-    #cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO cnu_news (title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
     stmt2 = "INSERT INTO cnu_h_info (title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
     stmt3 = "INSERT INTO cnu_e_info (title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
     stmt4 = "INSERT INTO cnu_job(title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
-    #stmt2 = "INSERT INTO info_db2 (title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
-    # ON DUPLICATE KEY UPDATE title = VALUES(title)
+
     cursor.executemany(stmt, list)
     cursor.executemany(stmt2, list2)
     cursor.executemany(stmt3, list3)
     cursor.executemany(stmt4, list4)
-    #cursor.executemany(stmt2, list)  # 한 번에 복수 개를 저장
-    # cursor.executemany(stmt, list)
+
     cnx.commit()
     cnx.close()
 
@@ -92,13 +88,6 @@ def crawlling(soup, data_list):
         data_list.append(query_data)
 
 
-
-# print("제목: " + c_title.a.get_text())
-#        print("url: " + CONCAT_URI + c_href[1:])    # href는 앞에 .붙어서 .빼줘야함
-#        print("작성자: " + c_center.get_text())
-#        print("날짜: " + c_date.get_text())
-#        print()
-
 # 구인구직 크롤링
 def crawllingJobs(soup, data_list):
     table = soup.find('table', {'class': 'default_table'})
@@ -119,13 +108,6 @@ def crawllingJobs(soup, data_list):
 
         query_data = (title, link, writer, date)
         data_list.append(query_data)
-
-
-# print("제목: " + td_title.a.get_text())
-#        print("url: " + CONCAT_JOBS + td_url)
-#        print("작성자: " + td_write.get_text())
-#        print("날짜: " + td_date.get_text())
-#        print()
 
 if __name__ == "__main__":
     main()

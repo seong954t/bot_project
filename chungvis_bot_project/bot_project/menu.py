@@ -2,14 +2,14 @@
 
 from selenium import webdriver
 from bs4 import BeautifulSoup
-import mysql.connector
+import pymysql
 # 식단 페이지 URL
 MENU = "http://cnuis.cnu.ac.kr/jsp/etc/weekMenuFrame.jsp"
 
 MENU_2 = []
 MENU_3 = []
 def inputData(list,list2):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO menu_2 (m_date, menu, price) VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE m_date=VALUES(m_date)"
