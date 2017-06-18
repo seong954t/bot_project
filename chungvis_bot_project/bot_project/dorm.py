@@ -14,8 +14,6 @@ DORM_menu = []
 DORM_info = []
 
 def inputData(list,list2):
-    # DEFAULT SETTING : host='127.0.0.1', port='3306',charset='utf8'
-    #cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
     cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
