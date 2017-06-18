@@ -1,6 +1,5 @@
 import time
 import pymysql
-import mysql
 import telepot          #   텔레그램 봇과 통신하기 위한 API
 import sys
 import re
@@ -33,7 +32,7 @@ DORM_info = DORM[1]
 def inputData(list):
     # DEFAULT SETTING : host='127.0.0.1', port='3306',charset='utf8'
     #cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
-    cnx = mysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO info_db (title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
