@@ -1,11 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-import mysql.connector
+import pymysql
 
 def inputData(list):
     # DEFAULT SETTING : host='127.0.0.1', port='3306',charset='utf8'
-    cnx = mysql.connector.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
-    #cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO info_db (title, link, writer, publish_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
@@ -13,7 +12,7 @@ def inputData(list):
     # ON DUPLICATE KEY UPDATE title = VALUES(title)
     cursor.executemany(stmt, list)
     cursor.executemany(stmt2, list)  # 한 번에 복수 개를 저장
-    # cursor.executemany(stmt, list)
+
     cnx.commit()
     cnx.close()
 

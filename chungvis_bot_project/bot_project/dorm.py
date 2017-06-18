@@ -2,7 +2,7 @@
 
 import requests
 from bs4 import BeautifulSoup
-import mysql.connector
+import pymysql
 
 # 은행사 공지사항 URL page number 제외
 DORM = "https://dorm.cnu.ac.kr/_prog/_board/?code=sub05_0501&site_dvs_cd=kr&menu_dvs_cd=0501&skey=&sval=&site_dvs=&GotoPage="
@@ -14,7 +14,7 @@ DORM_menu = []
 DORM_info = []
 
 def inputData(list,list2):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO dorm_menu (menu, d_date) VALUES (%s, %s) ON DUPLICATE KEY UPDATE d_date=VALUES(d_date)"

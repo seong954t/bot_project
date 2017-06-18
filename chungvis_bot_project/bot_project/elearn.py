@@ -2,7 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import NoSuchElementException
 import time
-import mysql.connector
+import pymysql
 
 E_URL = "http://e-learn.cnu.ac.kr/"
 C_URL = "http://e-learn.cnu.ac.kr/lms/class/classroom/doViewClassRoom_new.dunet?course_id=201620UN0025154D0000002&class_no=02&term_year=2016&term_cd=10&subject_cd=25154D00000&user_no="
@@ -16,7 +16,7 @@ E_info = []
 E_hw = []
 
 def inputData(list,list2,list3):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO e_ref (title, r_date) VALUES (%s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
