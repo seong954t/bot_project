@@ -2,7 +2,7 @@
 
 import requests
 from bs4 import BeautifulSoup
-import mysql.connector  #   MYSQL 커넥터
+import pymysql
 
 # 페이지 번호를 제외한 URL
 INFO = "http://computer.cnu.ac.kr/index.php?mid=notice&page="  # 학사 공지 (로그인 필요)
@@ -14,7 +14,7 @@ CSE_g_info = []
 CSE_s_info = []
 
 def inputData(list,list2,list3):
-    cnx = mysql.connector.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
+    cnx = pymysql.connect(user='root', password='1234qwer', host='110.35.41.233', port='13306', database='cnu_bachelor_info')
     cursor = cnx.cursor()
     print(list[0])
     stmt = "INSERT INTO cse_info (title, link, writer, c_date) VALUES (%s, %s, %s, %s) ON DUPLICATE KEY UPDATE title=VALUES(title)"
